@@ -6,6 +6,8 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Tests are not configured yet\" && exit 0",
     "lint": "eslint ."
   },
@@ -28,6 +30,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.31.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "jest": "^29.7.0",
     "mini-css-extract-plugin": "^2.9.2",
