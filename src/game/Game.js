@@ -1,4 +1,4 @@
-import Gnome from "./Gnome.js";
+import Gnome from './Gnome.js';
 
 export default class Game {
   constructor(rows, cols, gnomeImage) {
@@ -19,26 +19,26 @@ export default class Game {
   }
 
   createBoard() {
-    this.board = document.getElementById("gameBoard");
-    this.board.innerHTML = "";
+    this.board = document.getElementById('gameBoard');
+    this.board.innerHTML = '';
 
     for (let i = 0; i < this.rows * this.cols; i += 1) {
-      const cell = document.createElement("div");
-      cell.className = "cell";
+      const cell = document.createElement('div');
+      cell.className = 'cell';
       cell.dataset.index = i;
       this.board.appendChild(cell);
     }
   }
 
   placeGnomeRandomly() {
-    const cells = document.querySelectorAll(".cell");
+    const cells = document.querySelectorAll('.cell');
     const randomIndex = Math.floor(Math.random() * cells.length);
     this.currentPosition = randomIndex;
     cells[randomIndex].appendChild(this.gnome.element);
   }
 
   moveGnome() {
-    const cells = document.querySelectorAll(".cell");
+    const cells = document.querySelectorAll('.cell');
     let newPosition;
 
     do {
